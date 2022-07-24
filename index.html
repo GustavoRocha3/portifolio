@@ -57,7 +57,7 @@
         
         hr {
             color: rgb(251, 28, 28);
-            background-color: rgb(251, 28, 28);
+            background: radial-gradient(circle, rgb(251, 28, 28), transparent);
             height: 1px;
             border: none;
             margin-left: 25%;
@@ -172,18 +172,18 @@
         }
         
         .card-right img {
-            width: 40%;
+            width: auto;
             height: 60%;
         }
         
         .card-qualifications {
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
             width: 100%;
-            height: 400px;
+            height: auto;
             padding: 10px;
             color: rgb(251, 28, 28);
-            margin-top: 20px;
         }
         
         .menu-qualifications {
@@ -199,6 +199,12 @@
             padding: 30px;
             justify-content: space-around;
             align-items: center;
+        }
+        
+        .quali-center-flex {
+            display: flex;
+            justify-content: center;
+            height: auto;
         }
         
         .card-center-quali i {
@@ -226,7 +232,15 @@
             margin-left: 25%;
             margin-right: 25%;
             border: solid 1px rgb(251, 28, 28);
+            border-radius: 10px;
             color: rgb(251, 28, 28);
+        }
+        
+        .card-contact input,
+        textarea {
+            border-radius: 10px;
+            border-color: rgb(251, 28, 28);
+            padding: 5px 10px;
         }
         
         .card-contact form * {
@@ -266,11 +280,13 @@
             <div class="menu-qualifications">
                 <h2>Qualifications</h2>
             </div>
-            <div class="card-center-quali">
-                <i class="fa-brands fa-html5"></i>
-                <i class="fa-brands fa-css3-alt"></i>
-                <i class="fa-brands fa-js-square"></i>
-                <i class="fa-brands fa-node"></i>
+            <div class="quali-center-flex">
+                <div class="card-center-quali">
+                    <i class="fa-brands fa-html5"></i>
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <i class="fa-brands fa-js-square"></i>
+                    <i class="fa-brands fa-node"></i>
+                </div>
             </div>
         </div>
         <hr>
