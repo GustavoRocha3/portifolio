@@ -7,245 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio</title>
     <script src="https://kit.fontawesome.com/d974796235.js" crossorigin="anonymous"></script>
+    <script src="./public/javascripts/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./public/css/style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
-        * {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: rgb(34, 34, 34);
-        }
-        
-        h2 {
-            padding: 10px;
-        }
-        
-        body::-webkit-scrollbar {
-            width: 12px;
-            /* width of the entire scrollbar */
-        }
-        
-        body::-webkit-scrollbar-track {
-            background: rgb(33, 32, 32);
-            /* color of the tracking area */
-        }
-        
-        body::-webkit-scrollbar-thumb {
-            background-color: rgb(251, 28, 28);
-            /* color of the scroll thumb */
-            border-radius: 20px;
-            /* roundness of the scroll thumb */
-            border: 3px solid rgb(33, 32, 32);
-            /* creates padding around scroll thumb */
-        }
-        
-        header {
-            font-family: 'Montserrat', sans-serif;
-            width: 100%;
-            height: 100px;
-            border-bottom: solid rgb(251, 28, 28) 1px;
-            display: flex;
-            justify-content: space-between;
-            padding-right: 10px;
-            padding-left: 10px;
-        }
-        
-        i {
-            color: rgb(251, 28, 28);
-        }
-        
-        hr {
-            color: rgb(251, 28, 28);
-            background: radial-gradient(circle, rgb(251, 28, 28), transparent);
-            height: 1px;
-            border: none;
-            margin-left: 25%;
-            margin-right: 25%;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            font-size: 40px;
-            color: rgb(251, 28, 28);
-        }
-        
-        .menu-items {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            width: 100%;
-        }
-        
-        .menu-items a {
-            display: flex;
-            position: relative;
-            justify-content: space-around;
-            color: rgb(251, 28, 28);
-            text-decoration: none;
-        }
-        
-        .menu-items a:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: rgb(251, 28, 28);
-            visibility: hidden;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-            -webkit-transition: all 0.3s ease-in-out 0s;
-            transition: all 0.3s ease-in-out 0s;
-        }
-        
-        .menu-items a:hover:before {
-            visibility: visible;
-            -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-        }
-        
-        .item {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        
-        .ef-glow {
-            display: inline-block;
-            vertical-align: middle;
-            -webkit-transform: perspective(1px) translateZ(0);
-            transform: perspective(1px) translateZ(0);
-            box-shadow: 0 0 1px transparent;
-            -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-            -webkit-transition-property: box-shadow;
-            transition-property: box-shadow;
-        }
-        
-        .ef-glow:hover,
-        .ef-glow:focus,
-        .ef-glow:active {
-            box-shadow: 0 0 8px rgba(255, 62, 62, 0.6);
-        }
-        
-        .card-about {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            width: 100%;
-            height: 400px;
-            padding: 10px;
-        }
-        
-        .card-text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-            justify-content: space-around;
-        }
-        
-        .card-left {
-            font-family: 'Montserrat', sans-serif;
-            height: 100%;
-            width: 100%;
-            /* border: solid rgb(251, 28, 28) 1px; */
-            color: rgb(251, 28, 28);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: justify;
-            padding: 60px;
-        }
-        
-        .card-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            /* border: solid rgb(251, 28, 28) 1px; */
-        }
-        
-        .card-right img {
-            width: auto;
-            height: 60%;
-        }
-        
-        .card-qualifications {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 100%;
-            height: auto;
-            padding: 10px;
-            color: rgb(251, 28, 28);
-        }
-        
-        .menu-qualifications {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
-        
-        .card-center-quali {
-            font-size: 100px;
-            display: flex;
-            width: 100%;
-            padding: 30px;
-            justify-content: space-around;
-            align-items: center;
-        }
-        
-        .quali-center-flex {
-            display: flex;
-            justify-content: center;
-            height: auto;
-        }
-        
-        .card-center-quali i {
-            transition: transform 1s;
-            transform: translateX(0) scale(1);
-        }
-        
-        .card-center-quali i:hover,
-        .card-center-quali i:focus {
-            transform: translateX(5px) scale(1.5);
-        }
-        
-        .card-contact {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            height: 400px;
-            padding: 10px;
-        }
-        
-        .card-contact form {
-            display: flex;
-            flex-direction: column;
-            margin-left: 25%;
-            margin-right: 25%;
-            border: solid 1px rgb(251, 28, 28);
-            border-radius: 10px;
-            color: rgb(251, 28, 28);
-        }
-        
-        .card-contact input,
-        textarea {
-            border-radius: 10px;
-            border-color: rgb(251, 28, 28);
-            padding: 5px 10px;
-        }
-        
-        .card-contact form * {
-            margin: 10px;
-        }
+
     </style>
 </head>
 
@@ -256,13 +21,15 @@
             <p>Gustavo Rocha</p>
         </div>
         <div class="menu-items">
-            <a class="item" href="#card-about">About Me</a>
-            <a class="item" href="#card-qualifications">Qualifications</a>
-            <a class="item" href="#card-contact">Contact Me</a>
+            <a class="item" href="#about">About Me</a>
+            <a class="item" href="#qualifications">Qualifications</a>
+            <a class="item" href="#courses">Graduation & Courses</a>
+            <a class="item" href="#projects">Projects</a>
+            <a class="item" href="#contact">Contact Me</a>
         </div>
     </header>
     <main>
-        <div class="card-about">
+        <div id="about" class="card-about">
             <div class="card-left">
                 <div class="card-text">
                     <h2>About Me</h3>
@@ -270,15 +37,14 @@
                 </div>
             </div>
             <div class="card-right">
-                <img src="./foto.png" alt="foto">
-
+                <img src="./public/images/foto.png" alt="foto">
             </div>
         </div>
         <hr>
         </div>
-        <div class="card-qualifications">
+        <div id="qualifications" class="card-qualifications">
             <div class="menu-qualifications">
-                <h2>Qualifications</h2>
+                <h2>Technologies</h2>
             </div>
             <div class="quali-center-flex">
                 <div class="card-center-quali">
@@ -286,11 +52,47 @@
                     <i class="fa-brands fa-css3-alt"></i>
                     <i class="fa-brands fa-js-square"></i>
                     <i class="fa-brands fa-node"></i>
+                    <i class="fa-solid fa-database"></i>
                 </div>
             </div>
         </div>
         <hr>
-        <div class="card-contact">
+        <div class="card-graduation">
+            <h2>Graduation & Courses</h2>
+            <div class="graduations">
+                <div class="courses">
+                    <div class="front-card">
+                        <img src="./public/images/fatec.png" alt="fatec">
+                    </div>
+                    <div class="back-card">
+                        <h5>Fatec Bauru - Banco de Dados</h5>
+                        <p>Formado pela Fatec de Bauru - SP no curso de Banco de Dados no ano de 2021</p>
+                    </div>
+                </div>
+                <div class="courses">
+                    <div class="front-card">
+                        <img src="./public/images/dh.png" alt="digitalHouse">
+                    </div>
+                    <div class="back-card">
+                        <h5>Digital House - Desenvolvimento web Fullstack</h5>
+                        <p>Formado pela Digital House no curso de Desenvolvimento Web Fullstack</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="projects" class="card-projects">
+            <h2>Projects</h2>
+            <div class="projects-show">
+                <div class="github-projects">
+
+                </div>
+                <div class="github-projects"></div>
+                <div class="github-projects"></div>
+            </div>
+        </div>
+        <hr>
+        <div id="contact" class="card-contact">
             <form name="myForm">
                 <h1>Contact Me</h1>
                 <label for="name">Name:</label>
@@ -301,7 +103,16 @@
             </form>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footer-left">
+
+        </div>
+        <div class="footer-right">
+            <a href="https://api.whatsapp.com/send?phone=5511963030036&text=Ol%C3%A1!%20Gostaria%20de%20realizar%20um%20projeto%20com%20voc%C3%AA!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/gustavo-de-alencar-b-rocha/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/GustavoRocha3" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </footer>
 </body>
 
 </html>

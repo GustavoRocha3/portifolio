@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(34, 34, 34);
+}
+
+h2 {
+    padding: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(33, 32, 32);
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(251, 28, 28);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(33, 32, 32);
+    /* creates padding around scroll thumb */
+}
+
+header {
+    top: 1;
+    position: fixed;
+    z-index: 1030;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100px;
+    border-bottom: solid rgb(251, 28, 28) 1px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+header>div>i {
+    padding-right: 10px;
+}
+
+i {
+    color: rgb(251, 28, 28);
+}
+
+hr {
+    color: rgb(251, 28, 28);
+    background: radial-gradient(circle, rgb(251, 28, 28), transparent);
+    height: 1px;
+    border: none;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 40px;
+    color: rgb(251, 28, 28);
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.menu-items a {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    color: rgb(251, 28, 28);
+    text-decoration: none;
+}
+
+.menu-items a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(251, 28, 28);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.menu-items a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ef-glow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+}
+
+.ef-glow:hover,
+.ef-glow:focus,
+.ef-glow:active {
+    box-shadow: 0 0 8px rgba(255, 62, 62, 0.6);
+}
+
+.card-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 400px;
+    padding: 70px 10px 10px 10px;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.card-left {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    width: 100%;
+    /* border: solid rgb(251, 28, 28) 1px; */
+    color: rgb(251, 28, 28);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 60px;
+}
+
+.card-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* border: solid rgb(251, 28, 28) 1px; */
+}
+
+.card-right img {
+    width: auto;
+    height: 60%;
+}
+
+.card-qualifications {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    color: rgb(251, 28, 28);
+}
+
+.menu-qualifications {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.card-center-quali {
+    font-size: 100px;
+    display: flex;
+    width: 100%;
+    padding: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.quali-center-flex {
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.card-center-quali i {
+    transition: transform 1s;
+    transform: translateX(0) scale(1);
+}
+
+.card-center-quali i:hover,
+.card-center-quali i:focus {
+    transform: translateX(5px) scale(1.5);
+}
+
+.card-graduation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto 100px;
+}
+
+.card-graduation h2 {
+    color: rgb(251, 28, 28);
+}
+
+.graduations {
+    padding: 20px 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.courses {
+    height: 100%;
+    width: auto;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    perspective: 1000px;
+}
+
+.courses:hover {
+    transform: rotateY(180deg);
+}
+
+.front-card,
+.back-card {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back-card {
+    height: 200px;
+    width: 200px;
+    border: 1px solid rgb(251, 28, 28);
+    border-radius: 3px;
+    color: rgb(251, 28, 28);
+    transform: rotateY(180deg);
+}
+
+.graduations img {
+    height: 200px;
+    width: 200px;
+}
+
+.card-projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-projects h2 {
+    color: rgb(251, 28, 28);
+}
+
+.card-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+}
+
+.card-contact form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 25%;
+    height: 100%;
+    /* border: solid 1px rgb(251, 28, 28); */
+    border-radius: 10px;
+    color: rgb(251, 28, 28);
+}
+
+.card-contact input,
+textarea {
+    border-radius: 10px;
+    border-color: rgb(251, 28, 28);
+    padding: 5px 10px;
+}
+
+textarea {
+    height: 100%;
+}
+
+.card-contact form * {
+    margin: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    border-top: solid 1px rgb(251, 28, 28);
+}
+
+.footer-left {
+    width: 50%;
+}
+
+.footer-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+    padding-right: 25px;
+}
+
+.footer-right i {
+    padding: 20px;
+}
