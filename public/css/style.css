@@ -216,31 +216,37 @@ hr {
 
 .card-graduation {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto 100px;
-}
-
-.card-graduation h2 {
-    color: rgb(251, 28, 28);
-}
-
-.graduations {
-    padding: 20px 100px;
-    width: 100%;
-    display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 20px 100px;
+}
+
+h2 {
+    color: rgb(251, 28, 28);
+    text-align: center;
+}
+
+.flip-container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.img-flip {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.flip-container:hover .courses {
+    transform: rotateY(180deg);
 }
 
 .courses {
+    position: relative;
+    width: 100%;
     height: 100%;
-    width: auto;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    position: relative;
-    perspective: 1000px;
 }
 
 .courses:hover {
@@ -249,24 +255,17 @@ hr {
 
 .front-card,
 .back-card {
-    width: 100%;
-    height: auto;
     position: absolute;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
 }
 
 .back-card {
-    height: 200px;
-    width: 200px;
     border: 1px solid rgb(251, 28, 28);
     border-radius: 3px;
     color: rgb(251, 28, 28);
     transform: rotateY(180deg);
-}
-
-.graduations img {
-    height: 200px;
-    width: 200px;
 }
 
 .card-projects {
