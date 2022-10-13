@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: rgb(34, 34, 34);
+    background-color: #202124;
 }
 
 h2 {
@@ -266,6 +266,21 @@ h2 {
     border-radius: 3px;
     color: rgb(251, 28, 28);
     transform: rotateY(180deg);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.back-card h5 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.back-card p {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .card-projects {
